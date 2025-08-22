@@ -29,14 +29,14 @@
   // this means config etc can be in /app, while code is in /src
   "postCreateCommand": "chmod a+x \"$(pwd)/src\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)/src\" /var/www/html",
 
-  "forwardPorts": [80, "admin:80", "db:3306"],
+  "forwardPorts": [80, "admin:8000", "db:3306"],
 
   "portsAttributes": {
     "80": {
       "label": "Remote PHP Server",
       "onAutoForward": "notify"
     },
-    "admin:80": {
+    "admin:8000": {
       "label": "PHPMyAdmin",
       "onAutoForward": "notify"
     },
