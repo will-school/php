@@ -37,7 +37,7 @@ services:
     restart: always
     environment:
       <<: *ENV
-      PMA_PORT: 8000
+      APACHE_PORT: 8000
 
 volumes:
   mysql:
