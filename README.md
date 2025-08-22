@@ -21,6 +21,7 @@
     - [## Last installs](#last-installs)
     - [## Opening a Dev Container](#opening-a-dev-container)
   - [# Generic usage instructions](#generic-usage-instructions)
+    - [## Opening your server, PHPMyAdmin, and mySQL](#opening-your-server-phpmyadmin-and-mysql)
     - [## Updating the mySQL database user details](#updating-the-mysql-database-user-details)
     - [## Connecting to the database in php](#connecting-to-the-database-in-php)
 
@@ -39,8 +40,7 @@ This is a dev container template which includes and configures the following whi
 The workspace is mounted at `/app`, with `/app/src` being exposed to the internet.  
 The apache (web server) port, mysql port, and phpmyadmin port are all exposed to the host machine and avaliable under the "ports" tab.
 
-# Github Codespaces*
-\* Currently untested as I ran out of credits. In theory will work the same as Dev Containers, and I will test it at the end of the month
+# Github Codespaces
 
 Open the code from any device with a web browser and internet connection (sucks on mobile tho) without installing any tools. Works the same on school devices and personal devices regardless of operating system. Works in chrome, edge, firefox, and safari.  
 
@@ -194,9 +194,23 @@ The configuration for this dev container can be found by clicking the green "Cod
 2. You should recive a popup in vscode which says "Folder contains a dev container configuration file. Reopen folder to develop in a container." with a button which says "Reopen in Container". Click the button. If you don't get the notification, you can click the "remote" icon in the bottom left which looks like 2 `L`'s rotated and placed against each other. Look for the option which says "Reopen in Container"
 3. The window should now reload, and after a potentially lengthy delay (give it a minute or two, it's creating a computer) you should see roughly the same screen. In the bottom left it should say "Dev container: PHP Dev Container" next to the remote icon. 
 4. You may have a section which ends in "Done. Press any key to close the terminal." Just click a key, it can be ignored.
-4. PHP, mySQL, and PHPMyAdmin are now running. To open the PHP server or PHPMyAdmin, click the radio tower icon in the bottom left, near the remote icon. This should reveal a "ports" section. Listed will be `PHPMyAdmin (admin:80)`, `Remote PHP Server (80)`, and `MYSql Database (db:3306)`. To open the PHP server, hover over the link next to the label and click the globe icon to open the link in your browser. (Note: this link is only avaliable on your device) You can open the PHPMyAdmin server in the same way. 
+4. The Dev Container is now ready and running!
 
 # Generic usage instructions
+
+## Opening your server, PHPMyAdmin, and mySQL
+
+To open the PHP server or PHPMyAdmin, click the radio tower icon in the bottom left, near the remote icon. This should reveal a "ports" section. Listed will be `PHPMyAdmin (admin:8000)`, `Remote PHP Server (80)`, and `MYSql Database (db:3306)`. To open the PHP server, hover over the link next to the label and click the globe icon to open the link in your browser. You can open the PHPMyAdmin server in the same way.  
+If you want to use the mySQL app with another app you can copy the link from the same place (its supposed to look messed up in browser)
+
+These links will only work on your device, in the case of dev containers only in the same browser which you have the codespace open in. When using github codespaces you can expose your server to the wider web, if you want to test on a phone or let someone else test it.  
+Also note that the mysql server is not accessiable when using codespaces as github thinks the server failed to send a response and simply ignores it and sends a 500 error code back. If you want to use mySQL in an app outside the dev container/codespace you MUST use dev containers.
+
+> [!WARNING]  
+> At the time of writing ports are not forwarded automatically when using github codespaces due to an unresolved bug from circa 2021 <!--(great job microsoft. really knocked it out of the park there )-->  
+> In order to open PHPMyAdmin or your server you must manually forward the ports. You only need to do this if they are not already visible in the ports tab.  
+> Open the ports tab, click `Add Port`, and enter `80` for your PHP server, and `admin:8000` for PHPMyAdmin (mySQL is `db:3306`)  
+> If you correctly added the port it should show up as `Remote PHP Server (80)` or `PHPMyAdmin (admin:8000)` (or `MYSql Database (db:3306)`) respectively
 
 ## Updating the mySQL database user details.
 
