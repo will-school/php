@@ -1,7 +1,7 @@
 # we want the latest php and we want gnu core utils and a useable OS, not alpine
 FROM php:8.4-apache-bookworm
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get update -y && apt-get upgrade -y
 
 # https://github.com/devcontainers/images/blob/main/src/php/.devcontainer/Dockerfile
 RUN yes | pecl install xdebug \
