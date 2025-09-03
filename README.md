@@ -50,7 +50,7 @@ Github and Github Codespaces are owned by microsoft.
 A [GitHub](https://github.com) account  
 
 ## Note
-You only get $2.17USD/mo free for storage and usage credits. When that expires you will loose access to your files until you:
+You only get limited free credits for storage and usage credits. If you use a template by microsoft (ex: python) the storage is only charged for your files and is negligible. When using a "custom" template (like required here) you are charged for all files on the system, including applications and the OS. When the credits expire you will loose access to your files until you:
   - Add more credits to your account using real money
   - Registering for a github student account
       - Its not clear how much you get but I THINK this gives you unlimited usage??
@@ -103,7 +103,7 @@ Docker is an incredibly compicated and powerful tool, however we only need to in
 [Official installation instructions for docker engine (no gui) (not reccomended) (linux only)](https://docs.docker.com/engine/install/)
 
 ### Instalation 
-*Note*: I haven't tested the instructions for the following operating systems, and so they ***may*** not work, however the instructions are based on offical documentation and most likely will. Current list: MacOS, Windows, ChromeOS (tested debian), other linux distributions. 
+*Note*: While the instructions are based on official documentation, I haven't been able to test some OSes, and there may be issues installing it. Once installed it should Just Work. If you need help installing docker send me a message. OSes which haven't been tested: MacOS, Windows, ChromeOS\*, non `apt`/`pacman` based linux distros. \*ChromeOS uses debian (`apt`) when doing linux development, and so should have no issues
 #### MacOS:
   1. [Download Docker Desktop from this link](https://docs.docker.com/desktop/setup/install/mac-install/)   
   Open about this mac to check if you have an intel or apple chip. If the chip row says "Apple M[something]" you have an apple silicone. If the chip says "Intel" you have an intel chip
