@@ -216,9 +216,19 @@ Also note that the mysql server is not accessiable when using codespaces as gith
 > Open the ports tab, click `Add Port`, and enter `80` for your PHP server, and `admin:8000` for PHPMyAdmin (mySQL is `db:3306`)  
 > If you correctly added the port it should show up as `Remote PHP Server (80)` or `PHPMyAdmin (admin:8000)` (or `MYSql Database (db:3306)`) respectively
 
-### The site won't open! Error `502 Bad Gateway`
+### The site won't open! Error `502 Bad Gateway`. (Github Codespaces)
 
-When
+When using Github Codespaces it can be tempermental with port forwarding. Make sure to manually forward the ports first, if that doesn't work try the following steps to forward php. Note that I can't figure out how to get PhpMyAdmin to open properly in the web browser. You can still interact with the database via SQL commands however.
+
+1. Toggle port visibility
+   Click the ports tab, right click on port 80, and click `Change port visibility`, then select whichever visibility isn't selected
+   Note that "public" means it is accessiable to the wider net. This isn't a huge issue, just make sure not to put private info in. This is useful for sharing your site with someone else or opening it on another device
+2. Check the server status.
+   Open the port tab, then click `Terminal`.
+   From here, type `apache2ctl status` which should tell you information about the server.
+   If it gives an error log talking about not being able to connect to localhost, follow step 3
+   If it gives a long log mentioning CPU, idle workers, etc, then the server is running and you should try step 1 OR try switching to EasyPHP Dev Server/DevContainers.
+3. Run `apache2ctl start` in the command line to manualy boot the server.
 
 ## Updating the mySQL database user details.
 
