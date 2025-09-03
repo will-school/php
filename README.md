@@ -43,6 +43,10 @@ The apache (web server) port, mysql port, and phpmyadmin port are all exposed to
 # Github Codespaces
 
 Open the code from any device with a web browser and internet connection (sucks on mobile tho) without installing any tools. Works the same on school devices and personal devices regardless of operating system. Works in chrome, edge, firefox, and safari.  
+Note that due to some bugs with github codespaces I do not reccomend this method unless you can't install programs and don't have EasyPHP Dev Server:  
+- It doesn't properly launch the server or PhpMyAdmin
+- You need to manually forward ports
+- You can temporarily lose access unless you pay.
 
 Github and Github Codespaces are owned by microsoft.
 
@@ -211,6 +215,10 @@ Also note that the mysql server is not accessiable when using codespaces as gith
 > In order to open PHPMyAdmin or your server you must manually forward the ports. You only need to do this if they are not already visible in the ports tab.  
 > Open the ports tab, click `Add Port`, and enter `80` for your PHP server, and `admin:8000` for PHPMyAdmin (mySQL is `db:3306`)  
 > If you correctly added the port it should show up as `Remote PHP Server (80)` or `PHPMyAdmin (admin:8000)` (or `MYSql Database (db:3306)`) respectively
+
+### The site won't open! Error `502 Bad Gateway`
+
+When
 
 ## Updating the mySQL database user details.
 
